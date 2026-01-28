@@ -3,11 +3,11 @@ function correctPath(path)
 {
     var parts = window.location.pathname.split("/").filter(part => part);
     var depth = 0;
-    for (let i = 0; i < parts.length -1; i++)
+    for (let i = 0; i < parts.length -2; i++)
     {
-        if(parts && parts !== "index" && parts !== "index.html" 
-            && i > 0)
+        if(parts[i] !== "index" && parts[i] !== "index.html")
         {
+            console.log(parts[i]);
             depth += 1;
         }
     }
@@ -16,7 +16,6 @@ function correctPath(path)
     {
         prepend += "../";
     }
-    console.log("prepended path: ", prepend + path);
     return prepend + path;
 }
 
@@ -31,7 +30,13 @@ async function include(element, page)
         let correctedPath = correctPath(link.getAttribute("href"));
         link.setAttribute("href", correctedPath);
     });
-    
+    let logoLink = element.querySelectorAll(".logo");
+    logoLink.forEach((link) =>{
+        let correctedPath = correctPath(link.getAttribute("src"));
+        link.setAttribute("src", correctedPath);
+    });
+
+
 }
 function includeAll()
 {
