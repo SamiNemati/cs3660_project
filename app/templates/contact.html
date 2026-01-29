@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block main %}
+	Contact me by sending the Bat Signal 
+	into the sky. It looks like this:
+	<BR>
+	<img src="static/batsignal.jpg" width=200>
+
+	{% if batphone %}
+		<p>
+			Or just call me on the Batphone.
+			800-BAT-CALL
+		</p>
+	{% endif %}
+{% endblock %}
