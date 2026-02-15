@@ -1,0 +1,47 @@
+.body
+{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgb(255, 211, 247);
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+main
+{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.navbar-brand img
+{
+    max-height: 40px;
+    width: auto;
+}
+.serviceContainer
+{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+.serviceItem
+{
+    background-color: rgb(241, 192, 252);
+}
+.devImgContainer
+{
+    display: flex;
+    justify-content: center;
+    gap: 2em; 
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.devImg img
+{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}

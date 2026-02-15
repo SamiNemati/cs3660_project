@@ -1,0 +1,14 @@
+{% extends "common/layout.html" %}
+{%block main %}
+		<h1 style ="text-align: center">Services</h1>
+		<div class="serviceContainer">
+			{% for group in services %}
+				<div class="serviceItem">
+					<h2>{{group["name"]}}</h2>
+					{% for service in group["services"] %}
+						<p>{{service['name']}}</p>
+					{% endfor %}
+				</div>
+			{% endfor %}
+		</div>
+{% endblock %}

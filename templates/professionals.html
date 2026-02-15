@@ -1,0 +1,12 @@
+{% extends "common/layout.html" %}
+{%block main %}
+		<h1 style="text-align:center">Developent Team</h1>
+		<div class="devImgContainer">
+			{% for item in professionals %}
+				<div class = "devImg">
+					<p>{{item["name"]}} </p>
+					<img src="{{item['link']}}" alt="Developer">
+				</div>
+			{% endfor %}
+		</div>
+{% endblock %}

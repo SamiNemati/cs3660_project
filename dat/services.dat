@@ -1,0 +1,5 @@
+[
+    {"name": "Board Games", "services": [{"name": "Monopoly"}, {"name": "Checkers"}, {"name":"Scrabble"}]},
+    {"name": "Mind Games", "services": [{"name": "Sudoku"}, {"name": "Match Pairs"}, {"name":"Crosswords"}]},
+    {"name": "Card Games", "services": [{"name": "Trick-Taking"}, {"name": "Solitaire"}, {"name":"Thirteen"}]}
+]
