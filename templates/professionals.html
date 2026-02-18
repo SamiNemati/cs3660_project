@@ -5,7 +5,7 @@
 			{% for item in professionals %}
 				<div class = "devImg">
 					<p>{{item["name"]}} </p>
-					<img src="../static/images/professional{{item['id']}}.{{item['image_ext']}}" alt="Developer">
+					<img src="{{ url_for('static', filename='images/professional' ~ item.id ~ '.' ~ item.image_ext)}}" alt="Developer">
 				</div>
 			{% endfor %}
 		</div>
