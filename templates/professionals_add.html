@@ -1,0 +1,27 @@
+{% extends "common/layout.html" %}
+{% block main %}
+    
+    <h1 style="text-align:center">Developent Team</h1>
+    <div class="devImgContainer">
+        {% include "professionals_list.html" %}
+    </div>
+    {% if message %}
+        <div onclick="this.style.display='none'" style="width: 300px; margin: 20px auto 0 auto; text-align: center; color: red;">
+            <h2>{{message}}</h2>
+        </div>
+        
+    {% endif %}
+    <form method="POST" action="professionals_add" enctype="multipart/form-data" style="width: 300px; margin: 1% auto; padding: 40px;">
+        <h3>Add Professional</h3>
+        <p>
+            Name<BR> <input name=name value="{{request.form.get('name') or ''}}" required>
+        </p>
+        <p>
+            Photo<BR> <input name= image_file type=file accept=".gif, .png, .jpg, .jpeg" required>
+        </p>
+        <p>
+            <button onclick="event.preventDefault(); location.href='admin'">Cancel</button>
+            <button type=submit> Submit </button>
+        </p>
+    </form>
+{% endblock %} 

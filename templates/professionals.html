@@ -1,12 +1,7 @@
 {% extends "common/layout.html" %}
-{%block main %}
+{% block main %}
 		<h1 style="text-align:center">Developent Team</h1>
 		<div class="devImgContainer">
-			{% for item in professionals %}
-				<div class = "devImg">
-					<p>{{item["name"]}} </p>
-					<img src="{{ url_for('static', filename='images/professional' ~ item.id ~ '.' ~ item.image_ext)}}" alt="Developer">
-				</div>
-			{% endfor %}
+			{% include "professionals_list.html" %}
 		</div>
 {% endblock %}

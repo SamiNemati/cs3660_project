@@ -1,15 +1,8 @@
 {% extends "common/layout.html" %}
 {%block main %}
-		<h1 style ="text-align: center">Services</h1>
-		<div class="serviceContainer">
-			{% for group in services %}
-				<div class="serviceItem">
-					<img src="{{ url_for('static', filename='images/service' ~ group.id ~ '.' ~ group.img_ext)}}" alt="service Category">
-					<h2>{{group["name"]}}</h2>
-					{% for service in group["services"] %}
-						<p>{{service["name"]}}</p>
-					{% endfor %}
-				</div>
-			{% endfor %}
-		</div>
+	{% set showForm = False %}
+	<h1 style ="text-align: center">Services</h1>
+	<div class="serviceContainer">
+		{% include "services_list.html" %}
+	</div>
 {% endblock %}

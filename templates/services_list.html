@@ -1,0 +1,26 @@
+{% for group in services %}
+    <div class="serviceItem">
+        <img src="{{ url_for('static', filename='images/services/service' ~ group.id ~ '.' ~ group.image_ext)}}" alt="service Category">
+        <h2>{{group["name"]}}</h2>
+        {% for service in group["services"] %}
+            <p>{{service["name"]}}</p>
+        {% endfor %}
+    </div>
+    <div>
+        {% if showForm %}
+            <form method="POST" action="services_add">
+                <h3>Add Service to {{group['name']}}</h3>
+                <p>
+                    Name<BR> <input name=name  required>
+                </p>
+                <p>
+                    <input type="hidden" name="id" value="{{group.id}}">
+                </p>
+                <p>
+                    <button onclick="event.preventDefault(); location.href='admin'">Cancel</button>
+                    <button type=submit> Submit </button>
+                </p>
+            </form>
+        {% endif %}
+    </div>
+{% endfor %}

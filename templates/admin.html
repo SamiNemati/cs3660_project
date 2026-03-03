@@ -4,10 +4,23 @@
 	{% if message %}
 		<div style="background-color: red;color: white">{{ message}}</div>
 	{% endif %}
-	<a href="data_backup" onclick="return confirm('Backup?')">
-		<button style = "width: 300px">Backup Data</button>
-	</a>
-	<a href="data_restore" onclick="return confirm('Restore?')">
-		<button style = "width: 300px">Restore Data</button>
-	</a>
+	<div class="adminContainer">
+		<a class = "adminItem" href="data_backup" onclick="return confirm('Backup?')">
+			<button style = "width: 250px">Backup Data</button>
+		</a>
+		<a class = "adminItem" href="data_restore" onclick="return confirm('Restore?')">
+			<button style = "width: 250px">Restore Data</button>
+		</a>
+		<a class = "adminItem" href="professionals_add">
+			<button style = "width: 250px">Add Professional</button>
+		</a>
+		<a class = "adminItem" href="services_add">
+			<button style = "width: 250px">Add Service Category</button>
+		</a>
+		<a class = "adminItem" href="services_add">
+			<button style = "width: 250px">Add Service</button>
+		</a>
+	</div>
+	
+	
 {% endblock %}

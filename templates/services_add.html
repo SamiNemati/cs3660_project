@@ -1,0 +1,31 @@
+{% extends "common/layout.html" %}
+
+{% block main %}
+    {% set showForm = True %}
+    {% if message %}
+        <div onclick="this.style.display='none'" style="width: 300px; margin: 20px auto 0 auto; text-align: center; color: red;">
+            <h2>{{message}}</h2>
+        </div>
+        
+    {% endif %}
+    <h1 style ="text-align: center">Services</h1>
+
+    <form method="POST" action="services_add_category" enctype="multipart/form-data" style="width: 300px; margin: 2% auto; padding: 40px;">
+        <h3>Add New Category</h3>
+        <p>
+            Name<BR> <input name=name value="{{request.form.get('name') or ''}}" required>
+        </p>
+        <p>
+            Photo<BR> <input name= image_file type=file accept=".gif, .png, .jpg, .jpeg" required>
+        </p>
+        <p>
+            <button onclick="event.preventDefault(); location.href='admin'">Cancel</button>
+            <button type=submit> Submit </button>
+        </p>
+    </form>
+    <div class="serviceContainer">
+        {% include "services_list.html" %}
+    </div>
+   
+
+{% endblock %}
