@@ -1,14 +1,12 @@
 
 {% extends "common/layout.html" %}
 {%block main %}
-	{% if message %}
-		<div style="background-color: red;color: white">{{ message}}</div>
-	{% endif %}
+	<div id="adminAlert"></div>
 	<div class="adminContainer">
-		<a class = "adminItem" href="data_backup" onclick="return confirm('Backup?')">
+		<a class = "adminItem" onclick="database_command('backup')" >
 			<button style = "width: 250px">Backup Data</button>
 		</a>
-		<a class = "adminItem" href="data_restore" onclick="return confirm('Restore?')">
+		<a class = "adminItem" onclick="database_command('restore')">
 			<button style = "width: 250px">Restore Data</button>
 		</a>
 		<a class = "adminItem" href="professionals_add">

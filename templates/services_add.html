@@ -8,9 +8,9 @@
         </div>
         
     {% endif %}
-    <h1 style ="text-align: center">Services</h1>
+    <h1 style ="text-align: center">Add Services</h1>
 
-    <form method="POST" action="services_add_category" enctype="multipart/form-data" style="width: 300px; margin: 2% auto; padding: 40px;">
+    <form method="POST" enctype="multipart/form-data" onsubmit="add(event, 'category')" style="width: 300px; margin: 2% auto; padding: 40px;">
         <h3>Add New Category</h3>
         <p>
             Name<BR> <input name=name value="{{request.form.get('name') or ''}}" required>
@@ -23,9 +23,7 @@
             <button type=submit> Submit </button>
         </p>
     </form>
-    <div class="serviceContainer">
+    <div>
         {% include "services_list.html" %}
     </div>
-   
-
 {% endblock %}

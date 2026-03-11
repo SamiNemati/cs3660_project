@@ -41,16 +41,15 @@ def func_professionals_add():
     name = request.form.get("name")
     image_file = request.files["image_file"] if "image_file" in request.files else None
     message = ""
-    if not all([name, image_file]): message="Please fill out all fields."
-    elif not allowedFile(image_file): message="Valid files only(.png, .jpg, .jpeg, .gif)"
+    if not all([name, image_file]): message="err_missing"
+    elif not allowedFile(image_file): message="err_filetype"
     else: 
         try:
             professionals_add(name, image_file)
+            message = "ok"
         except Exception as e:
             message = str(e)
-    return render_template("professionals_add.html", message=message, professionals=get_professionals())
-
-
+    return message
 
 @app.route("/services_add", methods=["GET"])
 def func_service_add():
@@ -60,55 +59,62 @@ def service_add():
     name = request.form.get("name")
     id = request.form.get("id")
     message = ""
-    if not name: message="Please fill out all fields."
+    if not name: message="err_missing"
     else: 
-        try: services_add(id, name)
+        try: 
+            services_add(id, name)
+            message = "ok"
         except sqlite3.IntegrityError:
             message = "Bad category id error."
-    return render_template("services_add.html", message=message, services=get_services())
+    return message
 
 @app.route("/services_add_category", methods=["POST"])
 def func_services_add_category():
     name = request.form.get("name")
     image_file = request.files["image_file"] if "image_file" in request.files else None
     message = ""
-    if not all([name, image_file]): message="Please fill out all fields."
-    elif not allowedFile(image_file): message="Valid files only(.png, .jpg, .jpeg, .gif)"
+    if not all([name, image_file]): message="err_missing"
+    elif not allowedFile(image_file): message="err_filetype"
     else:
         try:
             services_add_category(name, image_file)
+            message = "ok"
         except Exception as e:
             message = str(e)
             
-    return render_template("services_add.html", message=message, services=get_services())
+    return message
 
+@app.route("/professionals_refresh")
+def professionals_refresh():
+    return render_template("professionals_list.html", message="", professionals=get_professionals())
 
+@app.route("/services_refresh")
+def services_refresh():
+    return render_template("services_list.html", showForm = True, services=get_services())
 
 
 @app.route("/data_backup")
 def backup():
-    message = "Success!"
+    message = ""
     try: 
-        data_backup() 
+        message = data_backup() 
     except: 
-        message = "Database Error!"
-    return render_template("admin.html", message = message)
+        message = "err_db"
+    return message
 
 @app.route("/data_restore")
 def restore():
-    message = "Success!"
+    message = ""
     try: 
-        data_restore() 
+        message = data_restore() 
     except: 
-        message = "Database Error!"
-    return render_template("admin.html", message = message)
+        message = "err_db"
+    return message 
 
 
 @app.route("/images/<filename>")
 def image(filename):
     return send_file(f"static/images/{filename}")
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)
