@@ -61,7 +61,7 @@ async function refresh_professionals()
 {
     try
     {
-        var content = await(await fetch("/professionals_refresh")).text();
+        var content = await(await fetch("professionals_refresh")).text();
         document.querySelector(".devImgContainer").innerHTML = content; 
     }
     catch(error) { alert("Unexpected error: " + error.message); }
@@ -71,7 +71,7 @@ async function refresh_services()
 {
     try
     {
-        var content = await(await fetch("/services_refresh")).text();
+        var content = await(await fetch("services_refresh")).text();
         document.querySelector(".services").innerHTML = content;
     }
     catch(error){ alert("Unxpected error: " + error.message);}
@@ -90,7 +90,7 @@ async function database_command(command)
         var response;
         if(command == "backup")
         {
-            try{response = await (await fetch("/data_backup")).text();}
+            try{response = await (await fetch("data_backup")).text();}
             catch(error)
             {
                 alert("Unexpected error: " + error.message);
@@ -107,7 +107,7 @@ async function database_command(command)
         }
         else
         {
-            try{response = await (await fetch("/data_restore")).text();}
+            try{response = await (await fetch("data_restore")).text();}
             catch(error)
             {
                 alert("Unexpected error: " + error.message);
