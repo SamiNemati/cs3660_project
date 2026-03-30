@@ -1,0 +1,9 @@
+[
+	{"link": ".", "title": "Home"},
+	{"link": "services", "title": "Games/Services"},
+	{"link": "professionals", "title": "Professionals"},
+	{"link": "contact", "title": "Contact"},
+    {"link": "admin", "title": "Admin"},
+	{"link": "professionals_add", "title": "Add Professional"},
+	{"link": "services_add", "title": "Add Category/Service"}
+]

@@ -1,0 +1,6 @@
+[
+	{"link": ".", "name": "Home"},
+    {"link": "admin", "name": "Admin"},
+	{"link": "professionals_add", "name": "Add Professional"},
+	{"link": "services_add", "name": "Add Category/Service"}
+]
