@@ -1,0 +1,109 @@
+#root
+{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgb(255, 211, 247);
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+main
+{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.navbar-brand img
+{
+    max-height: 40px;
+    width: auto;
+}
+.services
+{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+.serviceItem
+{
+    background-color: rgb(241, 192, 252);
+    padding: 10px;
+}
+.serviceItem img
+{
+    width: 200px;
+    height: 200px;
+    
+}
+.devImgContainer
+{
+    display: flex;
+    justify-content: center;
+    gap: 2em; 
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.devImg img
+{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.adminContainer
+{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin-top: 5%;
+}
+.adminItem
+{
+    background-color: rgb(241, 192, 252);
+    padding: 10px;
+}
+
+form
+{
+    display: grid;
+    gap: 1rem;
+    place-items: center;
+    margin: auto;
+}
+
+.editModeButton 
+{
+    all: unset;
+    background-color: transparent;
+    color: rgba(221, 222, 223, 0.65);
+    cursor: pointer;
+}
+
+.editModeButton:hover 
+{
+    color: rgba(255, 255, 255, 0.8);
+}
+.userProfile{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 1300px;
+    width: 90%;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+.user {
+    background-color: rgb(241, 192, 252);
+    border-radius: 10px;
+    max-width: 500px;
+    width: 320px;
+    padding: 1rem;
+    width: 100%;
+    flex: 1 1 320px;
+}
