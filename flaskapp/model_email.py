@@ -3,7 +3,7 @@ import smtplib
 from email.message import EmailMessage
 from flask import render_template 
 
-email_to = "saminematinum7@gmail.com"
+email_to = "11039618@uvu.edu"
 
 def contact_email(subject, message):
     username = os.environ.get("USER") 
